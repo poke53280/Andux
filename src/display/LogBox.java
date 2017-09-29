@@ -19,6 +19,7 @@ public class LogBox extends Panel implements Observer {
 	Button loginButton;
 	Button newButton;
 
+	// Test change
 
 	public LogBox() {
 		super();
