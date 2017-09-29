@@ -1,0 +1,232 @@
+
+ANDUX PLANER3
+-------------
+
+CREATED 22.OCT 00
+
+	Based on planer.txt, planer2.txt (See those files for
+	more wanted features/unwanted bugs.)
+
+
+SERVER/PERSISTENCE
+------------------
+
+0.0 Ok med konvensjon på server. port n, n+1, n+2,n+3?
+
+OK	0.0 Skille ut OneCom-kommandoene som egen pakke.
+	    som holder på connections. Tar imot kommandoer.
+	    Viser status: Alle TCP-linker oppe.	
+
+	0.0 Må også takle hardkodete henvendelser.
+	    
+   	0.0 Typespesifisere servertype
+	    (ID, POLL, STATION, et.c.)
+
+  	0.0 Ta inn binært/objekter:
+		a[]    = /tcp/binget localhost "tile 300"
+		Item i = (Item) /tcp/objget localhost "item 32"
+		String s = /tcp/sget localhost "idget"
+
+	0.0 Loginserver: log-in, ny bruker, del bruker. add host,
+	  del host, poll host.
+	
+	0.0 Poll host: UDP ping update? w/o proxy?
+	  Proxy on Andux-side OK. But Andux proxy never sends
+	  anything.
+
+	0.0 Design persistence. Not on every host.
+	  But andux + filehosts OR dedicated fileAndux,
+	  or andux <->tcp filesystem?
+	
+	0.0 Monitor - antall spillere, f.eks.- number of hosts,
+	   game-type.
+
+	0.0 Designe 'back-end' system. database/file.
+	  webserver/administration, offline playing (buy,
+	  monitor, et.c.) Design - metaserver/login/id-server
+	  use case, klient interface, et.c. Tenk på interface med
+	  webserver/applikasjonsserver.
+	
+	0.0 Lage grafisk display av alle hosts på en andux som kan
+	  ligge over hovedvinduet, toggle av/på?
+	  (Kan aksessere meta og be om liste.)
+
+	0.0 I hvilken rekkefølge bør en ny host kjøres inn?
+	  Visual first *Then login*? Dette er bra.('lett å komme
+	  i gang.')
+
+	0.0 For login: Begynn med å innføre en uid for alle ting.
+	  Eller ownerID/parentID?
+
+	0.0 Hide in 'safe-zone' med masse ting. Hentes ut ved
+	  oppstart? Pluss at egne ting holder det gående ute i 
+	  verden. Kan selv sjekke inn i safe-zone senere, dersom 
+	  skriptet sånn.
+
+	0.0 item id leave/host disconnect. host returns and gets back
+	  item id. Kan 'bevisst' sjekke inn items, og bare en 
+	  host(uid?) med samme signatur kan sjekke det ut, igjen.
+	  uid på alle items. Trengs ved persistence.
+
+
+SCRIPTING
+---------
+
+
+	0.0 Lag /e/get 'user-controlled'/focused
+		
+	0.0 /e/get any <in state> (e/getown, e/getspec)
+
+	0.0 En 'stack' med eldre itemIDer? :
+            Kan brukes som:
+	    /e/get (controlled)
+	    /e/get closest;  (from current)
+	    /e/get closeFriend
+	    /e/follow	(friend, closest)
+
+
+	0.0 Lag et meget skikkelig sett lavnivå bevegelsesmønstre.
+	    Lag oversikt over hva som trengs, design plan.
+	    Finn ut hvilke man trenger utad, og hvilke som bare er 
+	    bestanddeler.
+
+	0.0 NPC Goto    (Goto static target)
+    
+    	0.0 NPC Follow  (Goto moveable target) 
+	    				
+BUGGY	0.0 NPC Waypoint. Problem: State gjøres opp ved konstruksjon,
+            men den har forandret seg til bruk. HeadTo nå sanns. OK,
+            men Line er helt feil.
+        
+
+	0.0 Patrol/Square guiders - eksempler på generiske kontroll
+	    klasser som man kan skripte innhold til?
+	    Cycle(4), add(Guider g) et.c.
+
+	0.0 Also player-follow/ cruise control (Follow to hole et.c.)
+	    
+	0.0 Vurder Things, Places, People. Hva er hva?
+	    
+	0.0 Fire/Fem forskjellige 'ting'-typer. Ta ting -> gir styrke,
+	    og få andre ting til å følge etter deg.
+	    
+	0.0 'Attack' ting. Styrke basert på hva har med seg av followers.
+	
+	0.0 Sjekk overføring av guider/script. Med/uten state. Lønner seg,
+	    eller skaper større behov for moveupdates? Går an?
+		
+(OK)	0.0 Sjekk hvor ofte en guider (Square) endrer item parametre.
+	
+	0.0 Rydd opp i 'rotation' og force i Guider - hva er
+		    nødvendige og fornuftige objektvariable?
+	
+
+	
+CODE,DESIGN
+-----------
+
+	0.0 Extend classes which contain lots of commands to make
+	    command and class functions easier to see.
+
+	0.0 Overføring av Background.
+	
+	0.0 Utbyttbar 'localout' in Proxy. To handle varios send policies.
+	
+	0.0 Etablere forståelse av hva som er 'the player' 
+	    Den som styrer keyboard/en top NPC?
+	    Eller så å si en av trekantene.
+
+
+	0.0 Skille mellom 'andux-verden' og 'offline-verden.'
+	    in space -> docking - > on a station -> launch -> in space
+	
+	0.0 Få inn en slags item interaction.
+
+	0.0 Få inn alt som mangler for at Andux skal bli et spill.
+	    (Noe å gjøre/interaksjon, poeng, score-save.)
+
+-->	0.0 Sette opp spill helt uten spillerpersistence først?
+	    (Ha NPCer/verden, men ikke folk. Alt som tas vare på er
+	    en score, fra en scoreserver. (nickname <-> score) )
+	
+	0.0 Lage enkel score-server. set <navn> <passwd>, får tilbake
+	    scoren. Denne rapportes tilbake ved logout.
+	    Eller: station-server: Har stationID, navn,passord,score.
+
+		(stationID, score) = get (navn,passwd);
+		set(stationID, score) //Når avslutter, og er i station.
+
+	
+DISPLAY
+-------
+
+	0.0 Push to Display, not pull style like now.
+
+	0.0 Tilrettelegge for grafisk framstilling av status.
+	    Eks: Velge bilde av proxy/connection med piltaster. (detaljbilder
+	    + ett oversiktsbilde). Se på cardlayout
+
+	0.0 Check double ImageConsumer registration: What is done twice?
+	
+	0.0 Lage enkel LayoutManager, basert på main display, tre bokser,
+	    stdin, et.c
+	
+	0.0 Mulighet for å starte minimized.(Eller alltid gjøre.)
+		
+	0.0 Vurder enkel tekstformattering/verktøy.
+	    Kolonner, farger. (Prop, value)
+		
+	0.0 Lag 'Gui'-oppstart, kommandoløs.
+
+	0.0 Kun en 'radarview' for servere.
+	
+NET
+---
+	
+DROP	0.0 Lag offline engine dispenser. When used, can never enter AnduxSystem.
+	
+	0.0 Minimum removal: Remove hosts that have *never* answered, within
+	    1 minute/long time.
+
+    OK	0.0 Legg inn LOC/EXT til AutoConnect
+	
+	0.0 Mer omfattende, rigid state control i items. Tracks change in
+	    position, message, colour, guider to ease send lookup and
+	    decision.
+		    
+	0.0 Lage 'Server-mode', MONITOR. Ulik OWN, TRSF. Men always release
+	    også ved OWN, then SPEC. Kanskje med dedikerte 'serverinstanser' på
+	    serversiten. (Server:SUPERVISE, Client:LEASED)
+		
+	0.0 Player/Host item status. Analyze/ design ownership/policies.
+	    - Matrise: UserID, hostID - eierskap. En item eies av en user
+	    og en host. Kan endres bare når både user og host er lokal.
+
+	0.0 Ha 'null' localAddress inntil en skikkelig en finnes.
+	
+	0.0 Og ta tak i en slik skikkelig, innkommende adresse.
+	    
+	    
+BUGS
+----
+	0.0 Vil plutselig ikke kjøre clean shutdown. Henger på
+	    ConsoleCom.close() av merkelig grunn. (mange måneder siden
+	    rørt kode.)
+				
+	0.0 Bug: (10ms):64: blabla2, 6: blabla2 Ikke snakket
+	    som id 64 eller 42. Ser ut til å følge hvem som er 'fix,'
+	    ikke item.
+    	
+    	0.0 Radar world should scale linearly, dont reshape when
+	    showing odd resolutions like 320x200.
+
+	0.0 Feil i Engine.Push: createItem to push. Needs old getItem.
+	    		
+	0.0 Set item active when e/push.
+	    		
+	0.0 Attach guiders,then start engine -> hangup. (eControl kjører,
+	    ikke engine)
+		    
+	0.0 When resizeing ItemArray beyond max - prevent exception.
+	    (Handle out of resource,et.c.)
+	    

@@ -1,0 +1,101 @@
+
+ANDUX PLANER 5
+--------------
+12.NOVEMBER -00
+
+RECHECK 0.0 java.lang.IllegalStateException: TargetID but no LaunchID
+ 	        at io/handler/MoveUpdate.input
+ 	        at io/handler/Dispatcher.dispatch
+ 	        at io/Proxy.doIO
+ 	        at io/ProxyManager.doIO
+ 	        at Andux.loop
+ 	        at Andux.main
+ 
+	Sett en gang til når missiler tatt over av annen host, og de
+	treffer et item som er OWNed i den hosten.
+
+RECHECK 0.0 New Item created - had force set. Repooled, not force clean?
+
+OK 0.0 Simple delete dead hosts function.
+
+OK 0.0 Send on delta rotation > threshold.
+
+0.0 Display: Lag småvinduene uavhengige av 'Display' - som
+    bare kjenner dem som et interface eller en abstrakt klasse.
+    Lag i denne sammenhengen en enkel layout manager til Display.
+    LayoutManager.add(Position p, DisplayComponent c)
+    		 .remove(Position p)
+    
+    DisplayComponent extends Component implements Observer
+    Position = (TOP, MIDDLE, LOWER)
+
+0.0 Standardiserte bokser. Velge kommando *i* vinduet, enten som tekst,
+    eller knapper. Overskrift/label på topp av hver boks. Lett mulighet
+    for flere bokser/ bla gjennom flere panels i en boks. (CardLayout)
+
+0.0 Lag aksept for at ting i nærhet (targets) kan forsvinne. Spar på
+      referanse (ID om target er null) og retry senere.
+      
+      Eg. mer konseptuelt riktig å la en NPC alltid bare spare på target IDer,
+      og slå opp i engine hver gang. Da vil det fra NPCens side ikke være 
+      noen statusforskjell på om target fins eller ikke nå. Men dette kan bli
+      for tregt. (Kan man cache - ha objektet i bakhånd?)
+ 
+0.0 Missiles times out locally continue to live on spectating servers.
+ 
+0.0 /open: Show error message when file not found.
+ 
+0.0 Casual send of energy/score. (Now, dependent on messages.)
+ 
+OK 0.0 Include name in colormessage.
+
+OK 0.0 Flytte chattevindu ned til det store nede.
+
+OK 0.0 Show names on real players.
+
+WAIT 0.0 Logged-in-liste
+
+0.0 Bug: Starter med item 'in exile' etter er død. Fjerne bli død - bare
+    flytte til random plass på skjerm.
+
+0.0 Legg inn demo-knapper: 'add guard' (patrol), 'add turret'
+
+0.0 Mer fancy oversikt over proxiene. Søyler/ grafikk.
+
+0.0 Lyd.
+
+0.0 'Ghost' copy, transaction rollback possibility. TRSF -> TRSF + GHOST,
+    Send TRANSACT, TRSF -> SPEC (->DROP -> DELETE)
+   
+    case: no ACK back => GHOST -> TRSF, retry from start.
+    case: ACK back => GHOST -> DROP
+
+    Also handle, the 'ACK' lost, not the TRANSACT
+
+0.0 Seen: 'Guider.setData default blank impl.' Bad?
+
+0.0 Noen ting har score -200. (Recheck etter random send of ColorUpdate.)
+
+0.0 Home.setData -1. Bad? Check out.
+
+0.0 HOme.getData, d = -1 Bad?
+
+0.0 Future collision detection. First bounding box like now, 
+    then detailed intersection.
+
+0.0 ColorUpdate.input: Update rejected, id = .. Bad?
+
+0.0 Få inn konfigfil, igjen.
+
+OK 0.0 Set default area outside world. Not possible. But Focus now only 20,20
+    when exiled. Show those! Same with exiled positions.
+   
+0.0 Before shutting down, shrink focus to minimum/ place outside world.
+    Wait a little.
+
+0.0 Vise grafer. #items/tid i main engine. #bitrate/tid    
+
+
+       
+
+

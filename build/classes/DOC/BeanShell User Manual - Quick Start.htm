@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.beanshell.org/manual/quickstart.html -->
+<HTML><HEAD><TITLE>BeanShell User Manual - Quick Start</TITLE>
+<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+<META content="MSHTML 5.00.2614.3500" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff text=#000000>
+<TABLE cellSpacing=10>
+  <TBODY>
+  <TR>
+    <TD>
+      <CENTER><A href="http://www.beanshell.org/home.html"><IMG border=0 
+      src="BeanShell User Manual - Quick Start-filer/homebutton.gif"><BR>Home</A></CENTER></TD>
+    <TD>
+      <CENTER><A href="http://www.beanshell.org/manual/contents.html"><IMG 
+      border=0 
+      src="BeanShell User Manual - Quick Start-filer/backbutton.gif"><BR>Back</A></CENTER></TD>
+    <TD>
+      <CENTER><A href="http://www.beanshell.org/manual/contents.html"><IMG 
+      border=0 
+      src="BeanShell User Manual - Quick Start-filer/upbutton.gif"><BR>Contents</A></CENTER></TD>
+    <TD>
+      <CENTER><A href="http://www.beanshell.org/manual/bshcommands.html"><IMG 
+      border=0 
+      src="BeanShell User Manual - Quick Start-filer/forwardbutton.gif"><BR>Forward</A></CENTER></TD></TR></TBODY></TABLE>
+<HR>
+
+<H1>Quick Start</H1>This is just the crash course to get you going. I'm leaving 
+out some important options and details. Please see the user's guide (which is 
+not very long in its entirety) for all of the details. 
+<P>
+<H4>Download and Run BeanShell </H4>Download the <A 
+href="http://www.beanshell.org/download.html">latest jar file</A> and start up 
+BeanShell either in the graphical desktop mode or on the command line. 
+<P>If you just want to start playing around you may be able to to launch the 
+BeanShell desktop by simply double clicking on the bsh JAR file. More generally 
+however you'll want to add the jar to your classpath so that you can work with 
+your own classes and applications easily. 
+<P>
+<P>
+<CENTER>
+<TABLE border=1 cellPadding=5 width="100%">
+  <TBODY>
+  <TR>
+    <TD bgColor=#cfcfcc><PRE>
+<EM>unix:</EM>     export CLASSPATH=$CLASSPATH:bsh-xx.jar
+<EM>windows:</EM>  set classpath %classpath%;bsh-xx.jar
+
+    java bsh.Console       // run the graphical desktop
+or
+    java bsh.Interpreter   // run as text-only on the command line
+</PRE></TD></TR></TBODY></TABLE></CENTER>
+<P>
+<P><EM>Note: If you are running under JDK 1.1 and want to use the GUI you'll 
+also have to add the swing JAR file to your classpath.</EM> 
+<P>Once BeanShell is running you can also add to the classpath using the 
+addClassPath() command. 
+<P>The above examples show how to run bsh interactively. It's also possible to 
+run bsh in a <A href="http://www.beanshell.org/manual/servermode.html">server 
+mode</A> and to <A href="http://www.beanshell.org/manual/embedding.html">embed 
+bsh</A> for non-interactive use in your applications. You can even make <A 
+href="http://www.beanshell.org/manual/execscripts.html">executable bsh 
+scripts</A> under Unix using the standard "#!" syntax. See the <A 
+href="http://www.beanshell.org/manual/contents.html">user's manual</A> for more 
+information on those topics. 
+<P>
+<H4>The BeanShell Desktop and Console Windows </H4>Upon starting BeanShell one 
+console window will open. By right clicking on the <A 
+href="http://www.beanshell.org/manual/desktop.html">desktop</A> background can 
+also open additional console windows or other tools such as the BeanShell class 
+browser. 
+<P>Each console window effectively runs a separate bsh interpreter. Within the 
+graphical console you have basic command history, line editing, and cut and 
+paste. From any console window you can open a simple editor window for that 
+console. In it you can write scripts and hit the 'eval' button to evaluate them 
+in the attached workspace. 
+<P>
+<H4>Java Statements and Expressions </H4>At the prompt you can type standard 
+Java statements and expressions. Statements and expressions are all of the 
+normal things that you'd say inside a Java method: e.g. variable declarations 
+and assignments, method calls, loops, conditionals, etc. 
+<P>You can use these exactly as they would appear in Java, however in BeanShell 
+you have the option of working with "loosely typed" variables. That is, you can 
+simply be lazy and not declare the types of variables that you use (both 
+primitives and objects). BeanShell will still give you an error if you attempt 
+to misuse the actual type of the variable. 
+<P>Here are some examples: 
+<P>
+<CENTER>
+<TABLE border=1 cellPadding=5 width="100%">
+  <TBODY>
+  <TR>
+    <TD bgColor=#cfcfcc><PRE>    foo = "Foo";    
+    four = (2 + 2)*2/2;
+    print( foo + " = " + four );   // print() is a bsh command
+    
+    // Do a loop
+    for (i=0; i&lt;5; i++)
+        print(i);   
+
+    // Pop up a frame with a button in it
+    b = new JButton("My Button");
+    f = new JFrame("My Frame");
+    f.getContentPane().add(b, "Center");
+    f.pack();
+    f.show();
+</PRE></TD></TR></TBODY></TABLE></CENTER>
+<P>
+<P>
+<H4>Useful BeanShell Commands </H4>In the previous example we used a convenient 
+"built-in" <A href="http://www.beanshell.org/manual/bshcommands.html">BeanShell 
+command</A> called <A 
+href="http://www.beanshell.org/manual/bshcommands.html#print">print()</A>, to 
+display values. <A 
+href="http://www.beanshell.org/manual/bshcommands.html#print">print()</A> does 
+pretty much the same thing as System.out.println() except that it insures that 
+the ouput always goes to the command line. <A 
+href="http://www.beanshell.org/manual/bshcommands.html#print">print()</A> also 
+displays some types of objects (such as arrays) more verbosely than Java would. 
+Another very useful command is <A 
+href="http://www.beanshell.org/manual/bshcommands.html#show">show()</A>, which 
+toggles on and off automatic <A 
+href="http://www.beanshell.org/manual/bshcommands.html#print">print()</A>ing of 
+the result of every line you type. 
+<P>Here are a few other examples of <A 
+href="http://www.beanshell.org/manual/bshcommands.html">BeanShell commands</A>: 
+<UL>
+  <LI><A 
+  href="http://www.beanshell.org/manual/bshcommands.html#source">source()</A>, 
+  <A href="http://www.beanshell.org/manual/bshcommands.html#run">run()</A> - 
+  read a bsh script into this interpreter, or run it in a new interpreter 
+  <LI><A 
+  href="http://www.beanshell.org/manual/bshcommands.html#frame">frame()</A> - 
+  display the AWT/JFC component in a Frame 
+  <LI><A 
+  href="http://www.beanshell.org/manual/bshcommands.html#load">load()</A>, <A 
+  href="http://www.beanshell.org/manual/bshcommands.html#save">save()</A> - load 
+  or save serializable objects 
+  <LI><A href="http://www.beanshell.org/manual/bshcommands.html#cd">cd()</A>, <A 
+  href="http://www.beanshell.org/manual/bshcommands.html#cat">cat()</A>, <A 
+  href="http://www.beanshell.org/manual/bshcommands.html#dir">dir()</A>, pwd(), 
+  etc. - Unix-like shell commands 
+  <LI><A href="http://www.beanshell.org/manual/bshcommands.html#exec">exec()</A> 
+  - run a native application </LI></UL>
+<P>See the complete list of <A 
+href="http://www.beanshell.org/manual/bshcommands.html">BeanShell commands</A> 
+for more information. 
+<P><A href="http://www.beanshell.org/manual/bshcommands.html">BeanShell 
+commands</A> are simply methods which are implemented by bsh scripts supplied in 
+the bsh jar file. You can, of course, define your own methods in bsh and also 
+add your own scripts to the classpath to extend the basic command set. 
+<P>
+<H4>Scripted Methods </H4>You can declare and use methods in bsh just as you 
+would in a Java class. 
+<P>
+<CENTER>
+<TABLE border=1 cellPadding=5 width="100%">
+  <TBODY>
+  <TR>
+    <TD bgColor=#cfcfcc><PRE>    int addTwoNumbers( int a, int b ) {
+        return a + b;
+    }
+
+    sum = addTwoNumbers( 5, 7 );  // 12
+</PRE></TD></TR></TBODY></TABLE></CENTER>
+<P>Bsh methods may also have dynamic (loose) argument and return types. 
+<P>
+<CENTER>
+<TABLE border=1 cellPadding=5 width="100%">
+  <TBODY>
+  <TR>
+    <TD bgColor=#cfcfcc><PRE>    add( a, b ) {
+        return a + b;
+    }
+
+    foo = add(1, 2);            // 3
+    foo = add("Oh", " baby");   // "Oh baby"
+</PRE></TD></TR></TBODY></TABLE></CENTER>
+<P>
+<H4>Scripted Objects </H4>In BeanShell, as in JavaScript and Perl, method 
+"closures" allow you to create scripted objects. You can turn the results of a 
+method call into an object reference by having the method return the special 
+value <STRONG>this</STRONG>. You can then use that reference to refer to any 
+variables set in the method call. To make useful objects you need instance 
+methods of course so in BeanShell methods may also contain methods at any level. 
+
+<P>
+<CENTER>
+<TABLE border=1 cellPadding=5 width="100%">
+  <TBODY>
+  <TR>
+    <TD bgColor=#cfcfcc><PRE>    foo() {
+        print("foo");
+        x=5;
+
+        bar() {
+            print("bar");
+        }
+
+        return this;
+    }
+
+    myfoo = foo();    // prints "foo"
+    print( myfoo.x ); // prints "5"
+    myfoo.bar();      // prints "bar"
+</PRE></TD></TR></TBODY></TABLE></CENTER>
+<P>If this seems strange to you please see the <A 
+href="http://www.beanshell.org/manual/contents.html">user's manual</A> for more 
+details. 
+<P>
+<TABLE cellSpacing=10>
+  <TBODY>
+  <TR>
+    <TD>
+      <CENTER><A href="http://www.beanshell.org/home.html"><IMG border=0 
+      src="BeanShell User Manual - Quick Start-filer/homebutton.gif"><BR>Home</A></CENTER></TD>
+    <TD>
+      <CENTER><A href="http://www.beanshell.org/manual/contents.html"><IMG 
+      border=0 
+      src="BeanShell User Manual - Quick Start-filer/backbutton.gif"><BR>Back</A></CENTER></TD>
+    <TD>
+      <CENTER><A href="http://www.beanshell.org/manual/contents.html"><IMG 
+      border=0 
+      src="BeanShell User Manual - Quick Start-filer/upbutton.gif"><BR>Contents</A></CENTER></TD>
+    <TD>
+      <CENTER><A href="http://www.beanshell.org/manual/bshcommands.html"><IMG 
+      border=0 
+      src="BeanShell User Manual - Quick Start-filer/forwardbutton.gif"><BR>Forward</A></CENTER></TD></TR></TBODY></TABLE></P></BODY></HTML>

@@ -1,0 +1,20 @@
+
+
+-- forward packets through hosts.
+
+-- proper ownership of items.
+
+-- proper dead reckoning.
+
+
+-- set nick/login.
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/root/DuxPark.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/gfx/Screen.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/net/MessageSocket.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/root/Node.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/root/LLook.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/cm/ClusterMaster.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/io/ProxyManager.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/cm/Density.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/cm/AgentTracer.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/net/Connector.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/cm/Evaluation.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/io/HANDLER/PLoss.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/io/HANDLER/Message.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/display/PointRender.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/io/HANDLER/FocusHandler.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/io/HANDLER/Manipulator.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/offline/User.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/cm/ConsistentTimer.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/net/NetConnector.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/io/HANDLER/Dispatcher.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/io/Comparator.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/cm/AgentTrace.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/io/HANDLER/ColorUpdate.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/io/HANDLER/RemoteNode.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/root/WorldView.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/root/WorldSize.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/net/Hub.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/gfx/App.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/io/HANDLER/LocalNode.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/io/Wire.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/cm/EvalReport.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/root/CycleVector.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/root/BoardView.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/agent/AgentFactory.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/cmd/RandomFile.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/cmd/DisplayCom.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/agent/Agency.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/cm/ClusterState.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/net/VMSocket.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/net/NetMessage.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/gfx/Desk.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/net/DataPlexer.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/root/TalkView.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/root/MultiRun.java</file>
+            <file>file:/C:/Users/anders/Documents/NetBeansProjects/Andux/src/agent/WarpAgent.java</file>
+        </group>
+    </open-files>
+</project-private>

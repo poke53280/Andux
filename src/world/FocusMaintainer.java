@@ -1,0 +1,1 @@
+package world;public interface FocusMaintainer{	public Focus getFocus();	public boolean attachFocus(int id);	public void fixFocus(int x, int y);}

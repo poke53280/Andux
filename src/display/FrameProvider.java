@@ -1,0 +1,1 @@
+package display;import java.awt.Point;import java.awt.Rectangle;public interface FrameProvider{//public int getArea(RenderImage[] buffer, int offX, int offY,//						int width, int height);	public int getArea(RenderImage[] buffer);	public int getAll(RenderImage[] buffer);	public Point getOffset();	public Rectangle getFocusRectangle();}
